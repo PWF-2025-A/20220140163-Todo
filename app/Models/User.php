@@ -45,4 +45,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Define a one-to-many relationship with Todo.
+     */
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
+    }
 }
