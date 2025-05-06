@@ -99,7 +99,7 @@
                 </form>
             </div>
         @endif
-        <form action="{{ route('user.destroy', $user) }}" method="Post">
+        <form action="{{ route('user.destroy', $data) }}" method="Post">
             @csrf
             @method('delete')
             <button type="submit"
