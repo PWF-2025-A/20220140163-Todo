@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,5 +30,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::patch('/user/{user}/makeadmin', [UserController::class, 'makeadmin'])->name('user.makeadmin');
     Route::patch('/user/{user}/removeadmin', [UserController::class, 'removeadmin'])->name('user.removeadmin');
 });
+
+Route::resource('categories', CategoryController::class);
 
 require __DIR__ . '/auth.php';
